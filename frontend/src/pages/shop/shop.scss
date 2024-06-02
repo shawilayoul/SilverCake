@@ -1,0 +1,502 @@
+.shopContainer {
+  width: 100%;
+  .shopImag {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 60vh;
+      opacity: 0.6;
+    }
+    .title {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      h2 {
+        color: orangered;
+        font-size: 35px;
+        font-weight: bold;
+      }
+    }
+  }
+  .shopElements {
+    display: flex;
+    width: 90%;
+    padding: 2rem;
+    justify-content: center;
+    .sideBar {
+      width: 100%;
+      flex: 1;
+      .searchBar {
+        margin-bottom: 1rem;
+        input {
+          padding: 6px 18px;
+          border-radius: 8px;
+        }
+      }
+      h2 {
+        font-size: 18px;
+        margin-bottom: 1.5rem;
+      }
+      .filterPrice {
+        .intput-range {
+          width: 15rem;
+          color: orangered;
+          background-color: orangered;
+        }
+        .price {
+          display: flex;
+          align-items: center;
+          gap: 7.5rem;
+        }
+      }
+      .topSale {
+        .topSaleProduct {
+          img {
+            width: 120px;
+          }
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+    }
+    .shopMenuContainer {
+      flex: 3;
+      width: 100%;
+      .sortBar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid gray;
+        border-radius: 6px;
+        padding: 0 5px;
+        .right {
+          display: flex;
+          gap: 1rem;
+          select {
+            border: none;
+            background-color: inherit;
+          }
+        }
+      }
+      .shopMenus {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .slideItems {
+          border: 1px solid gray;
+          border-radius: 6px;
+          margin-top: 1rem;
+          .slideImg {
+            img {
+              width: 236px;
+              height: 200px;
+              border-radius: 6px;
+              &:hover {
+                opacity: 0.6;
+                cursor: pointer;
+              }
+            }
+          }
+          .slideInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            h3 {
+              color: orangered;
+              margin: 0;
+            }
+            button {
+              padding: 8px 20px;
+              background-color: inherit;
+              border-radius: 8px;
+              border: 1px solid orangered;
+              cursor: pointer;
+              &:hover {
+                background-color: orangered;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Tablete responsive **/
+@media screen and (max-width: 900px) {
+  .shopContainer {
+    width: 100%;
+    .shopImag {
+      .title {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        h2 {
+          font-size: 25px;
+        }
+      }
+    }
+    .shopElements {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      padding: 2rem;
+      .sideBar {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        width: 100%;
+        .searchBar {
+          margin-bottom: 1rem;
+          input {
+            padding: 6px 18px;
+            border-radius: 8px;
+          }
+        }
+        h2 {
+          font-size: 18px;
+          margin-bottom: 1.5rem;
+          color: orangered;
+        }
+        .btnProduct button {
+          border: 1px solid black;
+          background-color: lightslategrey;
+          width: 100%;
+          color: white;
+        }
+        .filterPrice {
+          h3 {
+            color: orangered;
+          }
+          .intput-range {
+            width: 15rem;
+            color: orangered;
+            background-color: orangered;
+          }
+          .price {
+            display: flex;
+            align-items: center;
+            gap: 7.5rem;
+          }
+        }
+        .topSale {
+          h3 {
+            color: orangered;
+          }
+          .topSaleProduct {
+            margin-top: 1rem;
+            img {
+              width: 150px;
+            }
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
+      .shopMenuContainer {
+        width: 100%;
+        .sortBar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          border: 1px solid gray;
+          border-radius: 6px;
+          padding: 0 5px;
+          .right {
+            display: flex;
+            gap: 1rem;
+            select {
+              border: none;
+              background-color: inherit;
+            }
+          }
+        }
+        .shopMenus {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          .slideItems {
+            border: 1px solid gray;
+            border-radius: 6px;
+            margin-top: 1rem;
+            .slideImg {
+              img {
+                width: 200px;
+                height: 170px;
+                border-radius: 6px;
+                &:hover {
+                  opacity: 0.6;
+                  cursor: pointer;
+                }
+              }
+            }
+            .slideInfo {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              .shopContainer {
+                width: 100%;
+                .shopImag {
+                  position: relative;
+                  width: 100%;
+                  img {
+                    width: 100%;
+                    height: 60%;
+                  }
+                  .title {
+                    top: 40%;
+                    left: 50%;
+                    position: absolute;
+                    h2 {
+                      color: orangered;
+                      font-size: 35px;
+                      font-weight: bold;
+                    }
+                  }
+                }
+                .shopElements {
+                  display: flex;
+                  width: 90%;
+                  padding: 2rem;
+                  justify-content: center;
+                  .sideBar {
+                    width: 90%;
+                    flex: 1;
+                    .searchBar {
+                      margin-bottom: 1rem;
+                      input {
+                        padding: 6px 18px;
+                        border-radius: 8px;
+                      }
+                    }
+                    h2 {
+                      font-size: 18px;
+                      margin-bottom: 1.5rem;
+                    }
+                    .filterPrice {
+                      .intput-range {
+                        width: 15rem;
+                        color: orangered;
+                        background-color: orangered;
+                      }
+                      .price {
+                        display: flex;
+                        align-items: center;
+                        gap: 7.5rem;
+                      }
+                    }
+                    .topSale {
+                      .topSaleProduct {
+                        img {
+                          width: 120px;
+                        }
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                      }
+                    }
+                  }
+                  .shopMenuContainer {
+                    flex: 3;
+                    width: 90%;
+                    .sortBar {
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      border: 1px solid gray;
+                      border-radius: 6px;
+                      padding: 0 5px;
+                      .right {
+                        display: flex;
+                        gap: 1rem;
+                        select {
+                          border: none;
+                          background-color: inherit;
+                        }
+                      }
+                    }
+                    .shopMenus {
+                      width: 100%;
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 1rem;
+                      .slideItems {
+                        border: 1px solid gray;
+                        border-radius: 6px;
+                        margin-top: 1rem;
+                        .slideImg {
+                          img {
+                            width: 236px;
+                            height: 200px;
+                            border-radius: 6px;
+                            &:hover {
+                              opacity: 0.6;
+                              cursor: pointer;
+                            }
+                          }
+                        }
+                        .slideInfo {
+                          display: flex;
+                          flex-direction: column;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 0rem;
+                          h3 {
+                            color: orangered;
+                            margin: 0;
+                          }
+                          p {
+                            margin: 0;
+                          }
+                          button {
+                            padding: 8px 20px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              gap: 0;
+              h3 {
+                font-size: 18x;
+                margin: 0;
+              }
+              button {
+                padding: 8px 20px;
+                background-color: inherit;
+                border-radius: 8px;
+                border: 1px solid orangered;
+                cursor: pointer;
+                &:hover {
+                  background-color: orangered;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Tablete responsive **/
+@media screen and (max-width: 600px) {
+  .shopContainer {
+    width: 100%;
+    .shopImag {
+      .title {
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+    .shopElements {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 87%;
+      padding: 2rem;
+      .sideBar {
+        width: 100%;
+        .searchBar {
+          margin-bottom: 1rem;
+          input {
+            padding: 6px 18px;
+            border-radius: 8px;
+          }
+        }
+        h2 {
+          font-size: 18px;
+          margin-bottom: 1.5rem;
+          color: orangered;
+        }
+        .btnProduct button {
+          border: 1px solid black;
+          background-color: lightslategrey;
+          width: 100%;
+          color: white;
+        }
+        .filterPrice {
+          h3 {
+            color: orangered;
+          }
+          .intput-range {
+            width: 15rem;
+            color: orangered;
+            background-color: orangered;
+          }
+          .price {
+            display: flex;
+            align-items: center;
+            gap: 7.5rem;
+          }
+        }
+        .topSale {
+          h3 {
+            color: orangered;
+          }
+          .topSaleProduct {
+            margin-top: 1rem;
+            img {
+              width: 180px;
+            }
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
+      .shopMenuContainer {
+        width:100%;
+        .sortBar {
+          width: 100%;
+          .right {
+            display: flex;
+            gap: 1rem;
+            select {
+              border: none;
+              background-color: inherit;
+              width: 8rem;
+            }
+          }
+        }
+        .shopMenus {
+          width: 90%;
+          display: grid;
+          grid-template-columns: auto;
+          .slideItems {
+            .slideImg {
+              img {
+                width: 260px;
+                height: 180px;
+                border-radius: 6px;
+              }
+            }
+            .slideInfo {
+              h3 {
+                font-size: 15x;
+                margin: 0;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

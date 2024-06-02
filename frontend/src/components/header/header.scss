@@ -1,0 +1,292 @@
+.headerContainer {
+  position: fixed;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  z-index: 2;
+  border-bottom: 0.2px dashed orangered;
+  .appbar {
+    display: none;
+  }
+  .logo {
+    h2 {
+      text-decoration: wavy;
+      text-transform: uppercase;
+      cursor: pointer;
+      span {
+        color: orangered;
+      }
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .menuLeft {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        li {
+          text-transform: uppercase;
+          list-style: none;
+          cursor: pointer;
+          .text-link {
+            text-decoration: none;
+            color: black;
+            &:hover {
+              color: orangered;
+            }
+          }
+         
+        }
+      }
+    }
+    .menuRight {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 2rem;
+      .searchBar{
+        position: relative;
+        .searchModel{
+          top: 40px;
+          right: 90px;
+          position: absolute;
+          background-color: red;
+          width: 200px;
+          height: 30px;
+          input{
+            padding: 10px 20px;
+            width: 250px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .cart {
+        position: relative;
+        span {
+          background-color: orangered;
+          position: absolute;
+          color: white;
+          padding: 3px;
+          text-align: center;
+          width: 15px;
+          border-radius: 50%;
+          top: -20px;
+          right: -5px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// responsive tablete
+@media screen and (max-width: 900px) {
+  .headerContainer {
+    width: 100%;
+    justify-content: space-between;
+    padding-left:1rem;
+    .appbar {
+      display: block;
+      font-size: 50px;
+      color: orangered;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      .mobilBar {
+        background-color: white;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        width: 95vw;
+        transition:  all ease-in-out 1s;
+        position: absolute;
+        top: 50px;
+        .menuLeft {
+          display: flex;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            li {
+              text-transform: uppercase;
+              list-style: none;
+              cursor: pointer;
+              font-size: 16px;
+              .text-link {
+                text-decoration: none;
+              }
+              &:hover {
+                color: orangered;
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .menu {
+      display: flex;
+      gap: 1rem;
+      .menuLeft {
+        display: none;
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          li {
+            text-transform: uppercase;
+            list-style: none;
+            cursor: pointer;
+            .text-link {
+              text-decoration: none;
+            }
+            &:hover {
+              color: orangered;
+            }
+          }
+        }
+      }
+      .menuRight {
+        margin-right: 2rem;
+        gap: 0.8rem;
+        .searchBar{
+          position: relative;
+          .searchModel{
+            top: 40px;
+            right: 90px;
+            position: absolute;
+            background-color: red;
+            width: 200px;
+            height: 30px;
+            input{
+              padding: 10px 20px;
+              width: 250px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// responsive mobil
+@media screen and (max-width: 600px) {
+  .headerContainer {
+    width: 97%;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    .appbar {
+      display: block;
+      font-size: 40px;
+      cursor: pointer;
+      position: relative;
+      .mobilBar {
+        background-color: white;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        width: 90vw;
+        top: 50px;
+        .menuLeft {
+          display: flex;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            li {
+              text-transform: uppercase;
+              list-style: none;
+              cursor: pointer;
+              font-size: 16px;
+              .text-link {
+                text-decoration: none;
+              }
+              &:hover {
+                color: orangered;
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      h2 {
+        text-decoration: wavy;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+    }
+    .menu {
+      display: flex;
+      gap: 1rem;
+      .menuLeft {
+        display: none;
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          li {
+            text-transform: uppercase;
+            list-style: none;
+            cursor: pointer;
+            .text-link {
+              text-decoration: none;
+            }
+            &:hover {
+              color: orangered;
+            }
+          }
+        }
+      }
+      .menuRight {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 2rem;
+        .searchBar{
+          position: relative;
+          .searchModel{
+            top: 40px;
+            right: 90px;
+            position: absolute;
+            background-color: red;
+            width: 200px;
+            height: 30px;
+            input{
+              padding: 10px 20px;
+              width: 250px;
+              border-radius: 5px;
+            }
+          }
+        }
+        .cart {
+          position: relative;
+          margin-right: 1rem;
+          span {
+            background-color: orangered;
+            position: absolute;
+            color: white;
+            padding: 3px;
+            text-align: center;
+            width: 15px;
+            border-radius: 50%;
+            top: -20px;
+            right: -12px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

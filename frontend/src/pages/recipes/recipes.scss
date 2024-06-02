@@ -1,0 +1,304 @@
+.recipeContainer {
+  width: 100%;
+  .recipeTop {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 60vh;
+      opacity: 0.5;
+    }
+    .title {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      h2 {
+        color: orangered;
+        font-size: 35px;
+      }
+    }
+  }
+  .recipeSearch {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 70%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    .searchElement {
+      .searchOption {
+        margin-bottom: 1rem;
+        select {
+          width: 13rem;
+          padding: 8px 20px;
+          border-radius: 6px;
+        }
+      }
+      .searchInpt {
+        input {
+          padding: 8px 20px;
+          border-radius: 6px;
+          border: 1px solid;
+        }
+      }
+      .btnSearch {
+        button {
+          width: 13rem;
+          padding: 8px 20px;
+          color:orangered;
+          border: 1px solid orangered;
+          background-color: inherit;
+          cursor: pointer;
+          border-radius: 6px;
+          &:hover{
+           background-color: orangered;
+           color: white;
+          }
+        }
+      }
+    }
+  }
+  .allRecipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    .title {
+      h2 {
+        color: orangered;
+        font-size: 30px;
+        text-transform: capitalize;
+      }
+    }
+    .recipesCategory {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem;
+      div &:hover {
+        cursor: pointer;
+      }
+    }
+    .RecipeItemsContainer {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-gap: 2rem;
+      .recipeItems {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .recipeImg {
+          margin-bottom: 2rem;
+          img {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+          div {
+            position: absolute;
+            top: 14.5rem;
+            color: goldenrod;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 6px;
+            padding: 8px 20px;
+            left: 4rem;
+            cursor: pointer;
+          }
+        }
+        .slideInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          p {
+            margin: 0;
+            span {
+              color: orangered;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Tablete responsive **/
+@media screen and (max-width: 900px) {
+  .recipeContainer {
+    width: 100%;
+    .recipeTop {
+      .title {
+        h2 {
+          font-size: 25px;
+        }
+      }
+    }
+    .recipeSearch {
+      flex-direction: column;
+      top: 40%;
+      width: 95%;
+      left: 0%;
+      height: 40%;
+      padding: 1rem;
+      .searchElement {
+        .searchOption {
+          select {
+            width: 25rem;
+          }
+        }
+        .searchInpt {
+          input {
+            width: 22.5rem;
+          }
+        }
+        .btnSearch {
+          button {
+            width: 25rem;
+          }
+        }
+      }
+    }
+    .allRecipes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 13rem;
+      .title {
+        h2 {
+          color: orangered;
+          font-size: 25px;
+          text-transform: capitalize;
+        }
+      }
+      .recipesCategory {
+        display: flex;
+        gap: 2rem;
+        div &:hover {
+          cursor: pointer;
+        }
+      }
+      .RecipeItemsContainer {
+        grid-template-columns: auto auto  auto;
+        grid-gap: 1rem;
+        .recipeItems {
+          .recipeImg {
+            margin-bottom: 2rem;
+            img {
+              width: 180px;
+              height: 200px;
+            }
+            div {
+              top: 11.5rem;
+              left: 2rem;
+            }
+          }
+          .slideInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Responsive Mobile **/
+@media screen and (max-width: 600px) {
+  .recipeContainer {
+    width: 100%;
+    .recipeTop {
+      .title {
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+    .recipeSearch {
+      flex-direction: column;
+      top: 40%;
+      width: 60%;
+      left: 16%;
+      height: 40%;
+      padding: 1rem 2rem;
+      .searchElement {
+        .searchOption {
+          select {
+            width: 17rem;
+          }
+        }
+        .searchInpt {
+          input {
+            width: 14.5rem;
+          }
+        }
+        .btnSearch {
+          button {
+            width: 17rem;
+          }
+        }
+      }
+    }
+    .allRecipes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 13rem;
+      .title {
+        h2 {
+          color: orangered;
+          font-size: 20px;
+          text-transform: capitalize;
+        }
+      }
+      .recipesCategory {
+        display: flex;
+        gap: 2rem;
+        div &:hover {
+          cursor: pointer;
+        }
+      }
+      .RecipeItemsContainer {
+        grid-template-columns:  auto;
+        grid-gap: 2rem;
+        margin-top: 2rem;
+        .recipeItems {
+          border: 1px solid gray;
+          border-radius: 8px;
+          .recipeImg {
+            margin-bottom: 2rem;
+            img {
+              width: 280px;
+              height: 250px;
+            }
+            div {
+              top: 14.5rem;
+              left: 5.5rem;
+            }
+          }
+          .slideInfo {
+            padding-bottom: 1rem;
+            p {
+              text-align: center;
+              margin: 0;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

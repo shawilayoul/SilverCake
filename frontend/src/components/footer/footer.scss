@@ -1,0 +1,221 @@
+.footerContainer {
+  width: 100%;
+  margin-top: 2rem;
+  .footerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgray;
+    padding: 2rem 1rem;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .EmailIcon {
+        color: white;
+        background-color: orangered;
+        padding: 1rem;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    .middle {
+      input {
+        padding: 10px 20px;
+        border-radius: 8px;
+      }
+    }
+    .right {
+      display: flex;
+      gap: 2rem;
+      cursor: pointer;
+      font-size: 24px;
+      .facebook {
+        a {
+          color: blue;
+        }
+      }
+      .twitter {
+        a {
+          color: aqua;
+        }
+      }
+      .youtube {
+        a{
+          color: red;
+        }
+      }
+    }
+  }
+  .footerBottom {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 2rem 1rem;
+    .about {
+      flex: 2;
+
+      h3 {
+        font-size: 20px;
+      }
+      .phonEmail {
+        p {
+          span {
+            color: orangered;
+          }
+        }
+      }
+    }
+    .links {
+      flex: 1;
+    }
+    .services {
+      flex: 1;
+    }
+    .blog {
+      flex: 1;
+      h3 {
+        margin-bottom: 1rem;
+      }
+      .blog1 {
+        img {
+          width: 150px;
+          height: 70px;
+        }
+      }
+    }
+  }
+}
+//responsive tablete
+@media screen and (max-width: 900px) {
+  .footerContainer {
+    width: 100%;
+    margin-top: 2rem;
+    .footerTop {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: space-around;
+      background-color: lightgray;
+      padding: 2rem 1rem;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .EmailIcon {
+          color: white;
+          background-color: orangered;
+          padding: 1rem;
+          border-radius: 50%;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+      .middle {
+        input {
+          padding: 10px 20px;
+          border-radius: 8px;
+        }
+      }
+      .right {
+        display: flex;
+        gap: 2rem;
+        cursor: pointer;
+        font-size: 24px;
+        color: blue;
+      }
+    }
+    .footerBottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: white;
+      padding: 1rem;
+      .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .links {
+        display: none;
+      }
+      .blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+//responsive mobile
+@media screen and (max-width: 600px) {
+  .footerContainer {
+    width: 100%;
+    margin-top: 2rem;
+    .footerTop {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: space-around;
+      background-color: lightgray;
+      padding: 2rem 1rem;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .EmailIcon {
+          color: white;
+          background-color: orangered;
+          padding: 1rem;
+          border-radius: 50%;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+      .middle {
+        input {
+          padding: 10px 20px;
+          border-radius: 8px;
+        }
+      }
+      .right {
+        display: flex;
+        gap: 2rem;
+        cursor: pointer;
+        font-size: 24px;
+        color: blue;
+      }
+    }
+    .footerBottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: white;
+      padding: 1rem;
+      .about {
+        h3 {
+          font-size: 18px;
+        }
+        p {
+          text-align: center;
+        }
+      }
+      .links {
+        display: none;
+      }
+      .blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}

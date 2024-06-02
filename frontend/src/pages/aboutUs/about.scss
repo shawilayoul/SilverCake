@@ -1,0 +1,209 @@
+.aboutContainer {
+  width: 100%;
+  .aboutTop {
+    position: relative;
+    img {
+      width: 100%;
+      height: 60vh;
+      opacity: 0.6;
+    }
+    .title {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      h2 {
+        color: orangered;
+        font-size: 30px;
+      }
+    }
+  }
+  .aboutHistory {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    .left {
+      img {
+        width: 400px;
+        height: 300px;
+      }
+    }
+    .right {
+      width: 40%;
+    }
+  }
+  .ourChiffre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: lightgray;
+    gap: 2rem;
+    .chiffreItems {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(240, 135, 135, 0.6);
+      color: white;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .staffs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    .top{
+      h3{
+        font-size: 30px;
+        color: orangered;
+        text-align: center;
+      }
+    }
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      display: grid;
+      grid-template-columns: auto auto auto auto; 
+      .staffImag {
+        img {
+          width: 205px;
+          height: 205px;
+        }
+      }
+    }
+  }
+}
+
+//responsive tablate
+@media screen and (max-width: 900px) {
+  .aboutContainer {
+    width: 100%;
+    .aboutTop {
+      .title {
+        h2 {
+          color: orangered;
+          font-size: 25x;
+        }
+      }
+    }
+    .aboutHistory {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem;
+      align-items: center;
+      .left {
+        img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      .right {
+        width: 40%;
+      }
+    }
+    .ourChiffre {
+      flex-direction: column;
+      padding: 2rem;
+      background-color: lightgrey;
+      gap: 2rem;
+      .chiffreItems {
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+    .staffs {
+      width: 100%;
+      .bottom {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        .staffImag {
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//responsive mobile
+@media screen and (max-width: 600px) {
+  .aboutContainer {
+    width: 100%;
+    .aboutTop {
+      .title {
+        h2 {
+          color: orangered;
+          font-size: 20px;
+        }
+      }
+    }
+    .aboutHistory {
+      gap: 1.5rem;
+      padding: 1rem;
+      flex-direction: column;
+      .left {
+        img {
+          width: 280px;
+          height: 300px;
+        }
+      }
+      .right {
+        width: 40%;
+      }
+    }
+    .ourChiffre {
+      flex-direction: column;
+      padding: 2rem;
+      background-color: lightgrey;
+      gap: 1rem;
+      .chiffreItems {
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    .staffs {
+      width: 90%;
+      .top{
+        h3{
+          font-size: 20px;
+        }
+      }
+      .bottom {
+        display: grid;
+        grid-template-columns:  auto;
+        .staffImag {
+          img {
+            width: 250px;
+            height: 190x;
+          }
+          p{
+            margin: 0;
+            margin-bottom: 5px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

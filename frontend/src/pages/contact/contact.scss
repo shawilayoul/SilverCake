@@ -1,0 +1,212 @@
+.contactContainer{
+    width: 100%;
+    .contactTop{
+        position: relative;
+        img{
+            width: 100%;
+            height: 60vh;
+            opacity: 0.6;
+        }
+        .title{
+            top: 50%;
+            left: 50%;
+            position: absolute;
+           h2{
+            color: orangered;
+            font-size: 30px;
+           }
+        }
+    }
+    .formContainer{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        .left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            h3{
+                font-size: 25px;
+                color: orangered;
+            }
+            .contactInfo{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0rem;
+
+                .icon{
+                    color: orangered;
+                    font-size: 1.5rem;
+                }
+                p{
+                    margin: 0.7rem;
+                }
+            }
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            h3{
+                margin: 0;
+                font-size: 25px;
+                color: orangered;
+                margin-bottom: 0.2rem;
+            }
+            p{
+            margin: 0px;
+            }
+            .formContact{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 2rem;
+                .inputfield input, textarea{
+                    width: 400px;
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    border: 1px solid gray ;
+                }
+                button{
+                    background-color: orangered;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .map{
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+// reponsive tablte
+@media screen and (max-width: 900px) {
+    .contactContainer{
+        .contactTop{
+            .title{
+                left: 40%;
+               h2{
+                color: orangered;
+                font-size: 25px;
+               }
+            }
+        }
+        .formContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         
+            .left{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0rem;
+                h3{
+                    font-size: 25px;
+                    color: orangered;
+                }
+                .contactInfo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .right{
+                h3{
+                    text-align: center;
+                    color: orangered;
+                    margin: 0;
+                    font-size: 25px;
+                }
+                p{
+                margin: 5px;
+                }
+                .formContact{
+                    .inputfield input, textarea{
+                        width: 400px;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                    }
+                  
+                }
+            }
+        }
+        .map{
+            width: 100%;
+            margin-top: 2rem;
+        }
+    }
+    
+}
+
+// reponsive mobile
+@media screen and (max-width: 600px) {
+    .contactContainer{
+        .contactTop{
+            .title{
+                left: 40%;
+               h2{
+                font-size: 20px;
+               }
+            }
+        }
+        .formContainer{
+            .left{
+                h3{
+                    font-size: 20px;
+                    color: orangered;
+                }
+                .contactInfo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .right{
+                h3{
+                    text-align: center;
+                    color: orangered;
+                    margin: 0;
+                    font-size: 20px;
+                }
+                p{
+                margin: 5px;
+                text-align: center;
+                font-size: 14px;
+                }
+                .formContact{
+                    display: flex;
+                    align-items: center;
+                    .inputfield input, textarea{
+                        width: 250px;
+                    }
+                    button{
+                        background-color: orangered;
+                        color: white;
+                        width: 300px;
+                        padding: 10px 10px;
+                        border-radius: 6px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .map{
+            text-align: center;
+            width: 90%;
+            margin-top: 2rem;
+            margin-left: 1.5em;
+        }
+    }
+    
+}
