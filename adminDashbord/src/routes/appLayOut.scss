@@ -1,0 +1,15 @@
+.appLayOut-container {
+  .main {
+    height: 90vh;
+    display: flex;
+    .main-menu {
+      
+        flex: 1;
+      background-color: red;
+    }
+    .main-outlet {
+        flex: 4;
+      background-color: blueviolet;
+    }
+  }
+}

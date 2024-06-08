@@ -1,4 +1,4 @@
-import { createBrowserRouter, Route, Link } from "react-router-dom";
+import { createBrowserRouter} from "react-router-dom";
 import Home from "../pages/home/Home";
 import About from "../pages/aboutUs/About";
 import Contact from "../pages/contact/Contact";
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayOut />,
-    children: [
+   children: [
       { index: true, element: <Home /> },
       {
         path: "blog",
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path:'recipes/recipeDetaill/:id',
         element:<RecipeDetail/>
-      }
+      },
     ],
   },
 ]);

@@ -1,0 +1,28 @@
+.menu-container {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    h3{
+        margin: 0;
+        margin-bottom: 2rem;
+        font-size: 18px;
+        color: lightgray;
+    }
+    .menu-list {
+        cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-decoration: none;
+      h4{
+        margin: 0;
+      }
+    }
+  }
+}
