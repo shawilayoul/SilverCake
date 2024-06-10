@@ -1,7 +1,9 @@
 import Menu from "../models/menuModel.js";
 export const createMenu = async (req, res) => {
   try {
-    const newroom = await Menu(req.body);
+    const { imgURL , ...newroom}= req.body;
+                            const {imgURL:image} =req.files
+    image.mv("./uploads" + image.name)
     await newroom.save();
     res.status(201).json(newroom);
   } catch (error) {

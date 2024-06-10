@@ -1,3 +1,8 @@
-header{
-    height: 60px;
+header {
+  height: 60px;
+  background-color: var(--blue-bg);
+  h2 {
+    margin: 0;
+    color: var(--color-white);
+  }
 }
