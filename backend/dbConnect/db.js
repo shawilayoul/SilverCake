@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+const  mongoose = require( "mongoose");
 
-async function dbConnect() {
+  const dbConnect = async() =>{
   try {
     await mongoose.connect("mongodb://localhost:27017/cakeArt");
     console.log('db connected sucessfully')
@@ -8,4 +8,6 @@ async function dbConnect() {
     console.log(error);
   }
 }
-export default dbConnect;
+module.exports ={
+  dbConnect
+}

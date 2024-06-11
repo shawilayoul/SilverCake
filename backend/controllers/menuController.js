@@ -1,10 +1,17 @@
-import Menu from "../models/menuModel.js";
-export const createMenu = async (req, res) => {
+const Menu = require("../models/menuModel.js");
+const createMenu = async (req, res) => {
+  const { title, price, description} = req.body;
+  const imagURL = req.file
+  console.log(selectedFile)
+  const newMenu = new Menu({
+    title,
+    price,
+    description,
+    selectedFile:imagURL,
+  });
+
   try {
-    const { imgURL , ...newroom}= req.body;
-                            const {imgURL:image} =req.files
-    image.mv("./uploads" + image.name)
-    await newroom.save();
+    await newMenu.save();
     res.status(201).json(newroom);
   } catch (error) {
     res.status(500).json(error);
@@ -12,7 +19,7 @@ export const createMenu = async (req, res) => {
 };
 
 /**geting all menu */
-export const getAllMenu = async (req, res) => {
+ const getAllMenu = async (req, res) => {
   try {
     const allMenu = await Menu.find();
     res.status(200).json(allMenu);
@@ -20,3 +27,8 @@ export const getAllMenu = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+module.exports= {
+  getAllMenu,
+  createMenu
+}
