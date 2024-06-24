@@ -8,8 +8,21 @@ import "swiper/css";
 import images from "../../assets/images";
 import { slideData } from "../../constants/data";
 import { useNavigate } from "react-router-dom";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { getMenu } from "../../srevices/apiMenu";
 const HomeSlide = () => {
   const navigate = useNavigate();
+   // Queries
+   const query = useQuery({ queryKey: ['menus'], queryFn: getMenu })
+
+   // Mutations
+   const mutation = useMutation({
+     mutationFn: getMenu,
+     onSuccess: () => {
+       // Invalidate and refetch
+       queryClient.invalidateQueries({ queryKey: ['menus'] })
+     },
+   })
 
   return (
     <div className="container">
@@ -22,13 +35,13 @@ const HomeSlide = () => {
           loop={true}
           pagination={{ clickable: true }}
         >
-          {slideData.map(({ id, image, title, description }) => {
+          {query.data?.map(({ id, image, title, description }) => {
             return (
               <SwiperSlide>
                 <div className="slideItems">
                   <div className="silder"  key={id}>
                     <div className="left">
-                      <img src={image} alt="" />
+                      <img src={`http://localhost:8000/${image}`} alt="" />
                     </div>
                     <div className="midile">
                       <h2>{title}</h2>
@@ -38,7 +51,7 @@ const HomeSlide = () => {
                       </button>
                     </div>
                     <div className="right">
-                      <img src={image} alt="" />
+                      <img src={`http://localhost:8000/${image}`} alt="" />
                     </div>
                   </div>
                 </div>

@@ -4,18 +4,31 @@ import "./homeRecipe.scss";
 import { FaRegStar } from "react-icons/fa";
 import { homeRecipe } from "../../constants/data";
 import { useNavigate } from "react-router-dom";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { getMenu } from "../../srevices/apiMenu";
 
 const HomeRecipe = () => {
   const navigate = useNavigate()
+   // Queries
+   const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
+
+   // Mutations
+   const mutation = useMutation({
+     mutationFn: getMenu,
+     onSuccess: () => {
+       // Invalidate and refetch
+       queryClient.invalidateQueries({ queryKey: ["menus"] });
+     },
+   });
   return (
     <div className="container">
       <h2>Recents Recipes</h2>
       <div className="RecipeContainer">
-        {homeRecipe.map(({id,image,title}) => {
+        {query.data?.map(({id,image,title}) => {
           return (
             <div className="recipeItems" key={id}>
               <div className="recipeImg" onClick={()=>navigate(`recipeDetaill/${id}`)}>
-                <img src={image} alt="" />
+                <img src={`http://localhost:8000/${image}`}  alt="" />
                 <p>
                 <FaRegStar />
                 <FaRegStar />

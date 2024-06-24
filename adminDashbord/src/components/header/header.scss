@@ -1,6 +1,8 @@
 header {
   height: 60px;
   background-color: var(--blue-bg);
+  position: fixed;
+  width: 100vw;
   h2 {
     margin: 0;
     color: var(--color-white);

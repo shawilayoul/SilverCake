@@ -2,6 +2,9 @@
   background-color:var(--blue-bg);
   color: white;
   padding: 1rem;
+  position: fixed;
+  width: 18%;
+  height: 100vh;
   .menu-items {
     display: flex;
     flex-direction: column;

@@ -15,7 +15,7 @@ const menuSchema = new mongoose.Schema(
       //required: true,
     },
     image: {
-      type:String
+      type:String,
       //data:Buffer,
      // contentType: String,
       //required: true,

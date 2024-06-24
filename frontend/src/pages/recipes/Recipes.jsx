@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Recipes = () => {
   const [selectedCat, setSelectCat] = useState("");
   const navigate = useNavigate();
+  
 
   //filter recipe by category or country
   const visibelCategory = selectedCat
