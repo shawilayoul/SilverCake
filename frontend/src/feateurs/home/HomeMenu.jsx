@@ -1,5 +1,4 @@
 import "./homemenu.scss";
-import { homeMenuData } from "../../constants/data";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CakeContext from "../../contexts/CakeContexts";

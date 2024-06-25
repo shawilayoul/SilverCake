@@ -1,14 +1,28 @@
 import { useParams } from "react-router-dom";
-import { RecipesData } from "../../constants/data";
 import images from "../../assets/images";
 import "./homeRecipeDetail.scss";
 import { FaRegStar } from "react-icons/fa";
 import Button from "../../components/Button";
 import { topsale } from "../../constants/data";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { getMenu } from "../../srevices/apiMenu";
 
 const HomeRecipeDetail = () => {
   const { id: recipeId } = useParams();
-  const singleRecipe = RecipesData.filter(({ id }) => id == recipeId);
+
+    // Queries
+    const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
+
+    // Mutations
+    const mutation = useMutation({
+      mutationFn: getMenu,
+      onSuccess: () => {
+        // Invalidate and refetch
+        queryClient.invalidateQueries({ queryKey: ["menus"] });
+      },
+    });
+  const singleRecipe = query.data?.filter(({ _id }) => _id == recipeId);
+  console.log(singleRecipe)
   return (
     <div className="HomeRDContainer">
       <div className="HomeRDTop">
@@ -20,7 +34,7 @@ const HomeRecipeDetail = () => {
       <div className="recipeInfo">
         <div className="left">
           <div className="recipeImg">
-            <img src={singleRecipe[0].image} alt="" />
+            <img src={`http://localhost:8000/${singleRecipe[0].image}`}  alt="" />
           </div>
           <h3>{singleRecipe[0].title}</h3>
           <p>
@@ -175,7 +189,7 @@ const HomeRecipeDetail = () => {
               {topsale.map(({ id, image, title, price }) => {
                 return (
                   <div className="topSaleProduct" key={id}>
-                    <img src={image} alt="" />
+                    <img src={`http://localhost:8000/${singleRecipe[0].image}`} alt="" />
                     <div className="productInfo">
                       <p>{title}</p>
                       <p>

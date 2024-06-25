@@ -4,21 +4,39 @@ const menuSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-     // required: true,
+  
     },
     price: {
       type: Number,
-      //required: true,
+     
     },
     description: {
       type: String,
-      //required: true,
+     
     },
     image: {
       type:String,
-      //data:Buffer,
-     // contentType: String,
-      //required: true,
+    
+    },
+    time: {
+      type:Number,
+    
+    },
+    Chef: {
+      type:String,
+    
+    },
+    Category: {
+      type:String,
+    
+    },
+    CategoryAll: {
+      type:String,
+    
+    },
+    cuisine: {
+      type:String,
+    
     },
   },
   {

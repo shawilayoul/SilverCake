@@ -1,14 +1,26 @@
 import "./shop.scss";
 import images from "../../assets/images";
 import { FaRegStar } from "react-icons/fa";
-import { shopData } from "../../constants/data";
 import { topsale } from "../../constants/data";
 import Button from "../../components/Button";
 import { useContext } from "react";
 import CakeContext from "../../contexts/CakeContexts";
+import { getMenu } from "../../srevices/apiMenu";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 const Shop = () => {
   const { updateCart } = useContext(CakeContext);
+   // Queries
+   const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
+
+   // Mutations
+   const mutation = useMutation({
+     mutationFn: getMenu,
+     onSuccess: () => {
+       // Invalidate and refetch
+       queryClient.invalidateQueries({ queryKey: ["menus"] });
+     },
+   });
   return (
     <div className="shopContainer">
       <div className="shopImag">
@@ -90,11 +102,11 @@ const Shop = () => {
             </div>
           </div>
           <div className="shopMenus">
-            {shopData.map(({ id, title, image, price }) => {
+            {query.data?.map(({ id, title, image, price }) => {
               return (
                 <div className="slideItems" key={id}>
                   <div className="slideImg">
-                    <img src={image} alt="slideimag" />
+                    <img src={`http://localhost:8000/${image}`}  alt="slideimag" />
                   </div>
                   <div className="slideInfo">
                     <h3>{title}</h3>

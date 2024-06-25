@@ -24,10 +24,10 @@ const HomeRecipe = () => {
     <div className="container">
       <h2>Recents Recipes</h2>
       <div className="RecipeContainer">
-        {query.data?.map(({id,image,title}) => {
+        {query.data?.map(({_id,image,title}) => {
           return (
-            <div className="recipeItems" key={id}>
-              <div className="recipeImg" onClick={()=>navigate(`recipeDetaill/${id}`)}>
+            <div className="recipeItems" key={_id}>
+              <div className="recipeImg" onClick={()=>navigate(`recipeDetaill/${_id}`)}>
                 <img src={`http://localhost:8000/${image}`}  alt="" />
                 <p>
                 <FaRegStar />
