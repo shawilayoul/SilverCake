@@ -1,11 +1,11 @@
 
-const { Menu } = require("../models/menuModel.js");
+const  Product  = require("../models/productsModel.js");
 
 
 /***get all products */
 const getAllProducts = async (req, res) => {
   try {
-    const getAll = await Menu.find()
+    const getAll = await Product.find()
     res.status(200).json(getAll)
   } catch (err) {
     res.status(400).json({ error: err.message })
@@ -14,7 +14,7 @@ const getAllProducts = async (req, res) => {
 /***delete products */
 const deleteProducts = async (req, res) => {
   try {
-    await Menu.findByIdAndDelete(req.params);
+    await Product.findByIdAndDelete(req.params);
     res.status(200).json("product delted successfully");
   } catch (err) {
     res.status(400).json({ error: err.message })
@@ -24,7 +24,7 @@ const deleteProducts = async (req, res) => {
 const updateProducts = async (req, res) => {
   const { title, description, price, image } = req.body;
   try {
-    const update = await Menu.findByIdAndUpdate(
+    const update = await Product.findByIdAndUpdate(
       req.params.id,
       {
         title,

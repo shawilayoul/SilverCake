@@ -1,17 +1,19 @@
-:root{
-    --blue-bg-:#1b263b;
+:root {
+  --blue-bg-: #1b263b;
+  --blue-bg: #1b263b;
+  --color-white: #ffffff;
 }
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    margin: 0;
+  margin: 0;
 }

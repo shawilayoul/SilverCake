@@ -19,6 +19,8 @@
     grid-template-columns: auto auto auto;
     grid-gap: 2rem;
     .slideItems {
+      width: 250px;
+     
       border: 1px solid gray;
       border-radius: 6px;
       .slideImg {

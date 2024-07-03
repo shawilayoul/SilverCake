@@ -1,10 +1,10 @@
-import React from "react";
+
 import images from "../../assets/images";
 import "./homeRecipe.scss";
 import { FaRegStar } from "react-icons/fa";
-import { homeRecipe } from "../../constants/data";
+
 import { useNavigate } from "react-router-dom";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import { getMenu } from "../../srevices/apiMenu";
 
 const HomeRecipe = () => {
@@ -17,7 +17,7 @@ const HomeRecipe = () => {
      mutationFn: getMenu,
      onSuccess: () => {
        // Invalidate and refetch
-       queryClient.invalidateQueries({ queryKey: ["menus"] });
+       QueryClient.invalidateQueries({ queryKey: ["menus"] });
      },
    });
   return (
@@ -51,7 +51,7 @@ const HomeRecipe = () => {
         <button onClick={()=>navigate('recipes')}>View All</button>
       </div>
       <div className="clientContainer">
-        <h3>What client's say?</h3>
+        <h3>What clients say?</h3>
         <div className="clientsOpinion">
           <div className="clientiInfo">
             <div className="clientImg">
