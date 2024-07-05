@@ -107,13 +107,13 @@
         border-radius: 6px;
         width: 350px;
       }
-      p{
+      p {
         font-size: 20px;
         cursor: pointer;
-      &:hover{
-
-        color: orangered;
-      }}
+        &:hover {
+          color: orangered;
+        }
+      }
       button {
         padding: 10px 12px;
         border-radius: 6px;
@@ -121,6 +121,35 @@
         &:hover {
           background-color: indianred;
           color: white;
+        }
+      }
+    }
+  }
+  .cartModel {
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    right: 200px;
+    top: 60px;
+    width: 500px;
+    padding: 20px;
+    .cartItem{
+      .item{
+        display:  flex;
+        align-items: center;
+        justify-content: space-between;
+        button{
+          background-color: orangered;
+          color: white;
+          padding: 6px;
+          border-radius: 6px;
+          border: none;
+          cursor: pointer;
+        }
+        .qauntity{
+          display: flex;
+          align-items: center;
+          gap: 5px;
         }
       }
     }

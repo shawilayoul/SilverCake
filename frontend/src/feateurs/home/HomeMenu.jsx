@@ -1,22 +1,22 @@
 import "./homemenu.scss";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import CakeContext from "../../contexts/CakeContexts";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import {CakeContext} from "../../contexts/CakeContexts";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import { getMenu } from "../../srevices/apiMenu";
 
 const HomeMenu = () => {
-  const { updateCart } = useContext(CakeContext);
+  const { addOneToCart} = useContext(CakeContext);
   const navigate = useNavigate();
   // Queries
   const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
 
   // Mutations
-  const mutation = useMutation({
+useMutation({
     mutationFn: getMenu,
     onSuccess: () => {
       // Invalidate and refetch
-      queryClient.invalidateQueries({ queryKey: ["menus"] });
+      QueryClient.invalidateQueries({ queryKey: ["menus"] });
     },
   });
   return (
@@ -37,7 +37,7 @@ const HomeMenu = () => {
               <div className="slideInfo">
                 <h3>{title}</h3>
                 <p>${price}</p>
-                <button onClick={(e) => updateCart(e)}>Add To Cart</button>
+                <button onClick={(e)=>addOneToCart(e,_id,image, title, price )}>Add To Cart </button>
               </div>
             </div>
           );

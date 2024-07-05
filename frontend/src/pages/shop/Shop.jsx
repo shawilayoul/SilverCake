@@ -4,9 +4,9 @@ import { FaRegStar } from "react-icons/fa";
 import { topsale } from "../../constants/data";
 import Button from "../../components/Button";
 import { useContext } from "react";
-import CakeContext from "../../contexts/CakeContexts";
+import {CakeContext} from "../../contexts/CakeContexts";
 import { getMenu } from "../../srevices/apiMenu";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 
 const Shop = () => {
   const { updateCart } = useContext(CakeContext);
@@ -14,11 +14,11 @@ const Shop = () => {
    const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
 
    // Mutations
-   const mutation = useMutation({
+   useMutation({
      mutationFn: getMenu,
      onSuccess: () => {
        // Invalidate and refetch
-       queryClient.invalidateQueries({ queryKey: ["menus"] });
+       QueryClient.invalidateQueries({ queryKey: ["menus"] });
      },
    });
   return (

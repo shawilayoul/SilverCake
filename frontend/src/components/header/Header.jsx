@@ -4,23 +4,30 @@ import { IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { useContext, useState } from "react";
-import CakeContext from "../../contexts/CakeContexts";
+import { CakeContext } from "../../contexts/CakeContexts";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./header.scss";
 const Header = () => {
+  const [showCart, setShowCart] = useState(false);
   const [showBar, setShowBar] = useState(false);
   const [showModel, setShowModel] = useState(false);
   const [showSign, setShowSign] = useState(false);
   const [searchBar, setSearchBar] = useState(false);
   const navigate = useNavigate();
-  const { countProduct } = useContext(CakeContext);
+  const { items, deleteFromCart, getTotalCost ,addOneToCart,removerOneFromCart} = useContext(CakeContext);
+
+  //get the total qaunitity
+  const totalQauntitiy = items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   const handelsign = async (data) => {
     try {
       if (!showSign) {
         await axios.post("http://localhost:8000/api/auth/login", data);
-        navigate(`/productsLayOut`)
+        navigate(`/productsLayOut`);
       } else {
         await axios.post("http://localhost:8000/api/auth/register", data);
       }
@@ -117,9 +124,9 @@ const Header = () => {
               </div>
             )}
           </div>
-          <div className="cart" onClick={() => navigate("cart")}>
+          <div className="cart" onClick={() => setShowCart(!showCart)}>
             <GrCart />
-            <span>{countProduct}</span>
+            <span>{totalQauntitiy}</span>
           </div>
           <div className="cart" onClick={() => setShowModel(!showModel)}>
             <FaUser />
@@ -180,6 +187,40 @@ const Header = () => {
               {showSign ? <button>SignUp</button> : <button>SignIn</button>}
             </div>
           </form>
+        </div>
+      )}
+      {showCart && (
+        <div className="cartModel">
+          {totalQauntitiy > 0 ? (
+            <div className="cartItem">
+              {items.map(({ id, quantity, image, title, price }) => {
+                return (
+                  <div key={id} className="item">
+                    <img
+                      src={`http://localhost:8000/${image}`}
+                      alt=""
+                      style={{ width: "100px", height: "40px" }}
+                    />
+                    <p>{title}</p>
+                    <p>${price}</p>
+                    <div className="qauntity">
+                      <button onClick={(e)=>addOneToCart(e,id)}> +</button>
+                      <p>{quantity}</p>
+                      <button onClick={()=>removerOneFromCart(id)}>-</button>
+                    </div>
+                    <button onClick={() => deleteFromCart(id)}>
+                      remove from Cart
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <p>There is no items in the cart</p>
+          )}
+
+          <p>Total:$ {getTotalCost()}</p>
+          <button>Purches Now</button>
         </div>
       )}
     </nav>

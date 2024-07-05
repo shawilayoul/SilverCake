@@ -2,6 +2,15 @@
 const  Product  = require("../models/productsModel.js");
 
 
+// get product by id
+const getProduct = async (req, res) => {
+  try {
+    const getAll = await Product.findById(req.params)
+    res.status(200).json(getAll)
+  } catch (err) {
+    res.status(400).json({ error: err.message })
+  }
+};
 /***get all products */
 const getAllProducts = async (req, res) => {
   try {
@@ -46,4 +55,5 @@ module.exports = {
   getAllProducts,
   deleteProducts,
   updateProducts,
+  getProduct
 };

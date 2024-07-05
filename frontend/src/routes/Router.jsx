@@ -6,7 +6,7 @@ import AppLayOut from "../components/AppLayOut";
 import Recipes from "../pages/recipes/Recipes";
 import Blog from "../pages/blog/Blog";
 import Shop from "../pages/shop/Shop";
-import Cart from "../components/cart/Cart";
+
 import RecipeDetail from "../pages/recipes/RecipeDetail";
 import HomeRecipeDetail from "../feateurs/home/HomeRecipeDetail";
 import MenuDetail from "../feateurs/home/MenuDetail";
@@ -46,10 +46,6 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
-      },
-      {
-        path: "cart",
-        element: <Cart />,
       },
       {
         path: "MenuDetail/:id",

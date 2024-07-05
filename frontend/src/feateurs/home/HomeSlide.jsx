@@ -1,14 +1,13 @@
 import "./homeSlide.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 import images from "../../assets/images";
-import { slideData } from "../../constants/data";
 import { useNavigate } from "react-router-dom";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import { getMenu } from "../../srevices/apiMenu";
 const HomeSlide = () => {
   const navigate = useNavigate();
@@ -16,11 +15,11 @@ const HomeSlide = () => {
    const query = useQuery({ queryKey: ['menus'], queryFn: getMenu })
 
    // Mutations
-   const mutation = useMutation({
+   useMutation({
      mutationFn: getMenu,
      onSuccess: () => {
        // Invalidate and refetch
-       queryClient.invalidateQueries({ queryKey: ['menus'] })
+       QueryClient.invalidateQueries({ queryKey: ['menus'] })
      },
    })
 
@@ -35,11 +34,11 @@ const HomeSlide = () => {
           loop={true}
           pagination={{ clickable: true }}
         >
-          {query.data?.map(({ id, image, title, description }) => {
+          {query.data?.map(({ _id:id, image, title, description }) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={id}>
                 <div className="slideItems">
-                  <div className="silder"  key={id}>
+                  <div className="silder">
                     <div className="left">
                       <img src={`http://localhost:8000/${image}`} alt="" />
                     </div>

@@ -1,48 +1,5 @@
 import images from "../assets/images";
-export const slideData = [
-  {
-    id: 1,
-    image: images.menu5,
-    title: "Celebaration Cake",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-  {
-    id: 2,
-    image: images.menu2,
-    title: "Celebaration Cake",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-  {
-    id: 3,
-    image: images.menu1,
-    title: "Celebaration Cake",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-  {
-    id: 4,
-    image: images.menu4,
-    title: "Prety Cakes",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-  {
-    id: 5,
-    image: images.menu3,
-    title: "Celebaration Cake",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-  {
-    id: 6,
-    image: images.menu6,
-    title: "Celebaration Cake",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.quis ad reprehenderit maiores a saepe soluta ea at molestiasalias? ",
-  },
-];
+
 //homMenu data
 export const homeMenuData = [
   {

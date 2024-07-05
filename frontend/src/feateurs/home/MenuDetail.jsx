@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./singleMenu.scss";
 import images from "../../assets/images";
 import { getMenu } from "../../srevices/apiMenu";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 
 const MenuDetail = () => {
   const navigate = useNavigate();
@@ -11,11 +11,11 @@ const MenuDetail = () => {
     const query = useQuery({ queryKey: ["menus"], queryFn: getMenu });
 
     // Mutations
-    const mutation = useMutation({
+    useMutation({
       mutationFn: getMenu,
       onSuccess: () => {
         // Invalidate and refetch
-        queryClient.invalidateQueries({ queryKey: ["menus"] });
+        QueryClient.invalidateQueries({ queryKey: ["menus"] });
       },
     });
   const menu = query.data?.filter(({ _id }) => _id == menuId);
