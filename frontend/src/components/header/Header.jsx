@@ -15,7 +15,13 @@ const Header = () => {
   const [showSign, setShowSign] = useState(false);
   const [searchBar, setSearchBar] = useState(false);
   const navigate = useNavigate();
-  const { items, deleteFromCart, getTotalCost ,addOneToCart,removerOneFromCart} = useContext(CakeContext);
+  const {
+    items,
+    deleteFromCart,
+    getTotalCost,
+    addOneToCart,
+    removerOneFromCart,
+  } = useContext(CakeContext);
 
   //get the total qaunitity
   const totalQauntitiy = items.reduce(
@@ -201,12 +207,17 @@ const Header = () => {
                       alt=""
                       style={{ width: "100px", height: "40px" }}
                     />
-                    <p>{title}</p>
-                    <p>${price}</p>
+                    <div>
+                      <p>{title}</p>
+                    </div>
+                    <div>
+                      {" "}
+                      <p>${price}</p>
+                    </div>
                     <div className="qauntity">
-                      <button onClick={(e)=>addOneToCart(e,id)}> +</button>
+                      <button onClick={(e) => addOneToCart(e, id)}> +</button>
                       <p>{quantity}</p>
-                      <button onClick={()=>removerOneFromCart(id)}>-</button>
+                      <button onClick={() => removerOneFromCart(id)}>-</button>
                     </div>
                     <button onClick={() => deleteFromCart(id)}>
                       remove from Cart
@@ -219,7 +230,7 @@ const Header = () => {
             <p>There is no items in the cart</p>
           )}
 
-          <p>Total:$ {getTotalCost()}</p>
+          <h4>Total:$ {getTotalCost()}</h4>
           <button>Purches Now</button>
         </div>
       )}

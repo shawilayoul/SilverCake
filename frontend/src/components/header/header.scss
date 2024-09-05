@@ -93,7 +93,8 @@
     top: 60px;
     right: 100px;
     padding: 20px;
-    background-color: lightgray;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     h2 {
       font-size: 20px;
     }
@@ -118,16 +119,18 @@
         padding: 10px 12px;
         border-radius: 6px;
         cursor: pointer;
+        background-color: orangered;
+        color: white;
         &:hover {
-          background-color: indianred;
-          color: white;
+          background-color: white;
+          color: black;
         }
       }
     }
   }
   .cartModel {
     position: absolute;
-    background-color: lightgray;
+    background-color: white;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     right: 200px;
     top: 60px;
@@ -152,6 +155,17 @@
           gap: 5px;
         }
       }
+    }
+    p{
+      color: orangered;
+    }
+    button{
+      padding: 0.5rem;
+      border-radius: 6px;
+      background-color: orangered;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
     }
   }
 }
